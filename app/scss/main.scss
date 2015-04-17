@@ -21,13 +21,18 @@ body {
 
 .card {
   padding: 10px;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  border: 1px solid red;
+
+  .remove-button {
+    position: relative;
+    bottom: 7px;
+  }
 }
 
-form {
+.form-cont {
   margin: 0 auto;
-  md-input-container,
-  md-button {
-    display: inline-block;
-    float: left;
-  }
+  display: block;
 }

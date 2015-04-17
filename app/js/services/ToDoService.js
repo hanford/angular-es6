@@ -1,16 +1,16 @@
 class ToDoService {
   constructor() {
-    this.list = [];
+    this.list = ['Jack', 'Hanford'];
   }
 
   add (v) {
     this.list.push(v);
-    console.log(this.list);
+    console.log("added", this.list);
   }
 
-  removeItem (v) {
-    var toRemove = this.list.indexOf(v);
-    this.list = this.list.slice(toRemove, -1);
+  removeItem (idx) {
+    console.log(idx);
+    this.list = this.list.splice(idx, 1);
   }
 
 }

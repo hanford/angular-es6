@@ -11,14 +11,11 @@ class HomeController {
       ToDoService.add(value);
     }
 
-    this.remove = (value) => {
-      if (!value) return;
-      ToDoService.removeItem(value);
-      $timeout(() => {
-        this.items = ToDoService.list
-      }, 0);
-
+    this.remove = (idx) => {
+      ToDoService.removeItem(idx);
+      this.items = ToDoService.list
     }
+
   }
 
 }

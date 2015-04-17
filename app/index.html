@@ -5,31 +5,27 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="./bower_components/skeleton/css/skeleton.css">
     <title>ES6 Angular <3</title>
     <meta name="mobile-web-app-capable" content="yes">
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-material/angular-material.min.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   </head>
   <body ng-app="app" ng-controller="HomeController as home">
     <h1 class="center">{{home.title}}</h1>
-    <md-content layout="column">
-      <form ng-submit="home.addItem(home.query)">
-        <md-input-container md-no-float flex="80">
-          <input type="text" id="add" ng-model="home.query" placeholder="Add Item">
-        </md-input-container>
-        <md-button class="md-primary md-raised" type="submit" flex="20">Add Item</md-button>
-      </form>
-      <md-card ng-repeat="item in home.items track by $index" class="card center">
-        <md-card-content>
-          <span class="pull-left">{{$index + 1}}.</span>
-          <span class="center">{{item}}</span>
-          <span class="pull-right"><md-button class="md-warn md-raised" ng-click="home.remove(item)">Remove</md-button></span>
-        </md-card-content>
-      </md-card>
-    </md-content>
+
+    <form ng-submit="home.addItem(home.query)" class="form-cont center">
+      <input type="text" id="add" ng-model="home.query" placeholder="Add Item">
+      <button class="button button-primary" type="submit">Add Item</button>
+    </form>
+
+    <ol>
+      <li ng-repeat="item in home.items track by $index" class="card">
+        <span>{{$index + 1}}.</span>
+        <span class="center">{{item}}</span>
+        <span class="pull-right"><button class="button remove-button" ng-click="home.remove($index)">Remove</button></span>
+      </li>
+    </ol>
 
     <script src="./js/app.js"></script>
   </body>
