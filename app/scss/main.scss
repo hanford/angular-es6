@@ -1,0 +1,33 @@
+body {
+  margin: 0 auto;
+  display: block;
+}
+
+.pull-left {
+  float: left;
+  display: inline-block;
+  clear: both;
+}
+
+.pull-right {
+  float: right;
+  display: inline-block;
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+.card {
+  padding: 10px;
+}
+
+form {
+  margin: 0 auto;
+  md-input-container,
+  md-button {
+    display: inline-block;
+    float: left;
+  }
+}
