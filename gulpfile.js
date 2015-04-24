@@ -19,8 +19,7 @@ var config = {
 
 var paths = {
   index: './app/index.html',
-  scss: './app/scss/**.scss',
-  bower: './app/bower_components/**/**.*',
+  scss: './app/scss/**.scss'
 }
 
 // clean the output directory
@@ -54,11 +53,6 @@ gulp.task('build', ['build-persistent'], function() {
   process.exit(0);
 });
 
-gulp.task('bower', function() {
-  return gulp.src(paths.bower)
-    .pipe(gulp.dest('./dist/bower_components/'));
-})
-
 gulp.task('index', function() {
   return gulp.src('./app/index.html')
     .pipe(gulp.dest('./dist/'))
@@ -70,7 +64,7 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('./dist/css/'))
 })
 
-gulp.task('watch', ['build-persistent', 'bower', 'index', 'scss'], function() {
+gulp.task('watch', ['build-persistent', 'index', 'scss'], function() {
 
   browserSync({
     server: {

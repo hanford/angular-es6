@@ -1,6 +1,4 @@
-import { HomeController } from './controllers/Home';
-import { ToDoService } from './services/ToDoService';
+import { SignupController } from './controllers/SignupController';
 
-angular.module('app', ['ngAnimate'])
-  .controller('HomeController', HomeController)
-  .service('ToDoService', ToDoService)
+angular.module('app', ['ngAnimate', 'ngMaterial'])
+  .controller('SignupController', SignupController)
